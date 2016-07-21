@@ -45,44 +45,69 @@ var quiz = [
 // working with Object literals
 
 var quiz = [{
-	question: "Who is considered the father of modern symphony?",
-	answer: ["Joseph Hydn", "Wolfgang Mozart", "Franz Schubet", "Ludwig Beethoven"],	
-	correctAnswer: 0
-	},
-	{
-	question: "What type of music existed during the medieval period?",
-	answer: ["chance music", "oops I did it again", "gregorian chant", "Bel Canto Operas"],
-	correctAnswer: 2
-	},
-	{
-	question: "When did expressionism in music flourished?",
-	answer: ["1920 - 1945", "1800 - 1850", "1912 - 1925", "2000 - present"],
-	correctAnswer: 2
-	}    
-];
+    question: "Who is considered the father of modern symphony?",
+    answer: ["Joseph Hydn", "Wolfgang Mozart", "Franz Schubet", "Ludwig Beethoven"],
+    correctAnswer: 0
+}, {
+    question: "What type of music existed during the medieval period?",
+    answer: ["chance music", "oops I did it again", "gregorian chant", "Bel Canto Operas"],
+    correctAnswer: 2
+}, {
+    question: "When did expressionism in music flourished?",
+    answer: ["1920 - 1945", "1800 - 1850", "1912 - 1925", "2000 - present"],
+    correctAnswer: 2
+}];
 
 // landing, coding for step 1
 // direct  (use a zero)
-var currentAnswer = 0;
+
 var currentQuestion = 0; //a number that represent where we are now, or what we are seeing?
-	$(".nextQuestion").click(function() {
-		for (var i = 0; i < 3; i++) {
-			$(".quiz").text(quiz[currentQuestion].question);
-		}
-		currentQuestion++;
-			$(".answers").text(quiz[currentAnswer].answer);
-			currentAnswer++;
-	})
+// Page 1.
+$(".quiz").text(quiz[currentQuestion].question);
+// }
+var html = "";
+for (var i = 0; i < quiz[currentQuestion].answer.length; i++) {
+    html += "<input type='radio'>" + quiz[currentQuestion].answer[i];
+    // };
+}
+$(".answers").html(html);
 
 
+$(".nextQuestion").click(function() {
+    /// Other pages
+    currentQuestion++;
+    // for (var i = 0; i < 3; i++) {
+    $(".quiz").text(quiz[currentQuestion].question);
+    // }
 
-	// for (var i = 0; i < 3; i++) {
-		
-	// 	}
+    var html = "";
+    for (var i = 0; i < quiz[currentQuestion].answer.length; i++) {
+        html += "<input type='radio'>" + quiz[currentQuestion].answer[i];
+        // };
+    }
+    $(".answers").html(html);
+
+});
+
+// checkAnswer();
+// currentAnswer++;
+
+
+// function checkAnswer() {
+//     for (answer in quiz) {
+//         for (var i = 0; i < answer.length; i++) {
+//             $(".answers").html("<input type='radio'>" + answer[i]);
+//         };
+//     }
+// }
+
+// for (var i = 0; i < 3; i++) {
+
+// 	}
 
 
 // $(".answers").append("<li>" + quiz[currentAnswer].answer + "</li>");
-		// currentAnswer++;	
+// currentAnswer++;	
 
 // for (ANSWERS){
 // 	// Input??
@@ -96,8 +121,8 @@ var currentQuestion = 0; //a number that represent where we are now, or what we 
 
 // 	for(var i = 0; i < quiz.length; i++){
 
-			
-		
+
+
 // 	}
 // }
 // quizAnswer();
