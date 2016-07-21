@@ -60,12 +60,48 @@ var quiz = [{
 	correctAnswer: 2
 	}    
 ];
-function quizAnswer(){
 
-	for(var i = 0; i < quiz.length; i++){
+// landing, coding for step 1
+// direct  (use a zero)
+var currentAnswer = 0;
+var currentQuestion = 0; //a number that represent where we are now, or what we are seeing?
+	$(".nextQuestion").click(function() {
+		for (var i = 0; i < 3; i++) {
+			$(".quiz").text(quiz[currentQuestion].question);
+		}
+		currentQuestion++;
+			$(".answers").text(quiz[currentAnswer].answer);
+			currentAnswer++;
+	})
 
-			$(".quiz").text(quiz[i].question);
+
+
+	// for (var i = 0; i < 3; i++) {
 		
-	}
-}
-quizAnswer();
+	// 	}
+
+
+// $(".answers").append("<li>" + quiz[currentAnswer].answer + "</li>");
+		// currentAnswer++;	
+
+// for (ANSWERS){
+// 	// Input??
+// 	//LI
+// }
+
+
+// Tricky part, producing the next question on clicking a button
+
+// function quizAnswer(){
+
+// 	for(var i = 0; i < quiz.length; i++){
+
+			
+		
+// 	}
+// }
+// quizAnswer();
+
+// function random() {
+// 	var random = Math.floor((quiz.length * Math.random()) + 1);
+// }
